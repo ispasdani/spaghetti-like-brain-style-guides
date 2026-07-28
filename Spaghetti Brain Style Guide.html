@@ -1,0 +1,159 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Spaghetti Brain — Design System Reference</title>
+<style>
+body{font-family:ui-monospace,Menlo,Consolas,monospace;max-width:860px;margin:40px auto;padding:0 24px;background:#fdfcfc;color:#201d1d;line-height:1.5}
+h1{font-size:28px;border-bottom:1px solid #201d1d;padding-bottom:12px}
+h2{font-size:18px;margin-top:40px;border-bottom:1px solid rgba(15,0,0,0.12);padding-bottom:6px}
+h3{font-size:15px;margin-top:24px}
+pre{background:#f1eeee;padding:12px 16px;overflow:auto;font-size:13px}
+code{background:#f1eeee;padding:1px 4px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0}
+td,th{border-bottom:1px solid rgba(15,0,0,0.12);padding:6px 8px;text-align:left}
+.sw{display:inline-block;width:14px;height:14px;vertical-align:middle;margin-right:6px;border:1px solid rgba(15,0,0,0.12)}
+li{margin-bottom:6px}
+</style></head><body>
+
+<h1>Spaghetti Brain — Design System Reference</h1>
+<p>Copy/paste this document into another chat to brief it on this brand's rules and style guide.</p>
+
+<h2>Overview</h2>
+<p>Spaghetti Brain is a live-competition platform for hackathons, coding challenges, design challenges, and quizzes. While a participant works a challenge, the platform tracks tab/window focus and splits the screen into four tracked panes — <b>Challenge</b> (prompt), <b>Code</b> (editor), <b>Review</b> (diff/submission), and <b>Browser</b> (open web research) — so AI-assisted and open-web problem solving is visible rather than hidden.</p>
+<p>Built from a written brief only (no codebase/Figma attached), adapting OpenCode's marketing-site design language (monospace-only type, ASCII bracket iconography, hairline-bordered flat sections, one dark "terminal" surface).</p>
+
+<h2>Content Fundamentals</h2>
+<ul>
+<li><b>Voice:</b> terse, technical, slightly deadpan — reads like tool documentation, not marketing copy ("Session tracked. Tab left at 02:14.")</li>
+<li><b>Person:</b> direct "you" for product copy/instructions; "we" only when the platform speaks about itself.</li>
+<li><b>Casing:</b> sentence case everywhere. No Title Case, no ALL CAPS except single-letter keybind hints (K, Z).</li>
+<li><b>Punctuation as UI:</b> ASCII brackets <code>[+]</code> <code>[-]</code> <code>[x]</code> as icons/bullets; a leading <code>&gt;</code> as a prompt marker in code/terminal contexts.</li>
+<li><b>No emoji, no exclamation points.</b> Numbers stated plainly ("3 challenges left", not "🎉 3 challenges left!").</li>
+<li><b>Vibe:</b> calm, observational, clinical — a proctor's tone, not hype. Matter-of-fact about being watched, never alarming or gamified.</li>
+</ul>
+
+<h2>Visual Foundations</h2>
+<ul>
+<li><b>Palette:</b> warm cream canvas as the only page background; near-black ink as the brand's only "color." One dark surface reserved exclusively for a full-bleed terminal/tracking mockup — never body content. Apple HIG semantic ramp (accent blue, danger, warning, success) is in-product state only; marketing/chrome stays monochrome.</li>
+<li><b>Type:</b> 100% monospace, one face for every role. Hierarchy from size + weight only: 38px/700 display, 16px/700 section labels, 16px/400 body, 16px/500 buttons at 2.0 line-height.</li>
+<li><b>Spacing:</b> 8px base unit; 96px between major sections, with only a 1px hairline rule marking the seam. No shadows, no heavy dividers.</li>
+<li><b>Backgrounds:</b> flat cream, no gradients/photography/illustration/texture. The one dark surface is text-only.</li>
+<li><b>Animation:</b> minimal, functional only. State changes snap rather than ease. No decorative motion, bounce, or parallax.</li>
+<li><b>Hover/press:</b> flat color shifts only — buttons darken to ink-deep on press. No lift, no shadow gain, no scale.</li>
+<li><b>Borders/shadows:</b> zero drop shadows anywhere. Separation is always a 1px hairline border.</li>
+<li><b>Radius:</b> two values only — 0px for containers/sections/cards, 4px for interactive elements. Avatars are the sole fully-rounded exception.</li>
+<li><b>Transparency/blur:</b> none, except the hairline border's translucent tint. No glass, no backdrop-filter.</li>
+<li><b>Cards:</b> flat hairline-bordered rectangles on canvas — never raised, never shadowed.</li>
+</ul>
+
+<h3>Font substitution note</h3>
+<p>Berkeley Mono (referenced in the original brief) is a paid commercial font and wasn't provided. This system substitutes <b>JetBrains Mono</b> from Google Fonts as the closest open metric match.</p>
+
+<h2>Iconography</h2>
+<ul>
+<li>No icon system, icon font, or SVG set. ASCII bracket markers (<code>[+]</code> <code>[-]</code> <code>[x]</code> <code>+</code> <code>−</code>) are the icon system — literal monospaced text, never separate icon assets.</li>
+<li>No emoji anywhere.</li>
+<li>Small in-product glyphs use literal characters (<code>→</code> <code>↻</code> <code>K</code> <code>Z</code>) rather than SVG icons.</li>
+<li>The only real visual asset is a pasta-plate glyph used as the brand mark; no other logo exists — do not invent one.</li>
+</ul>
+
+<h2>Color Tokens</h2>
+<table>
+<tr><th>Token</th><th>Value</th><th>Use</th></tr>
+<tr><td><span class="sw" style="background:#201d1d"></span>--ink</td><td>#201d1d</td><td>Text, brand "color", primary CTA fill</td></tr>
+<tr><td><span class="sw" style="background:#0f0000"></span>--ink-deep</td><td>#0f0000</td><td>Pressed-state primary CTA</td></tr>
+<tr><td><span class="sw" style="background:#fdfcfc"></span>--canvas</td><td>#fdfcfc</td><td>Only page/card background</td></tr>
+<tr><td><span class="sw" style="background:#f8f7f7"></span>--surface-soft</td><td>#f8f7f7</td><td>Input default bg, alt row tint</td></tr>
+<tr><td><span class="sw" style="background:#f1eeee"></span>--surface-card</td><td>#f1eeee</td><td>Install snippet, disabled fill</td></tr>
+<tr><td><span class="sw" style="background:#201d1d"></span>--surface-dark</td><td>#201d1d</td><td>Hero/tracker mockup bg, dark CTA</td></tr>
+<tr><td><span class="sw" style="background:#302c2c"></span>--surface-dark-elevated</td><td>#302c2c</td><td>Inset row inside dark mockup</td></tr>
+<tr><td><span class="sw" style="background:rgba(15,0,0,.12)"></span>--hairline</td><td>rgba(15,0,0,.12)</td><td>1px quiet divider</td></tr>
+<tr><td><span class="sw" style="background:#646262"></span>--hairline-strong</td><td>#646262</td><td>1px emphasized divider</td></tr>
+<tr><td><span class="sw" style="background:#302c2c"></span>--charcoal</td><td>#302c2c</td><td>Softer body text</td></tr>
+<tr><td><span class="sw" style="background:#424245"></span>--body</td><td>#424245</td><td>Default paragraph text</td></tr>
+<tr><td><span class="sw" style="background:#646262"></span>--mute</td><td>#646262</td><td>Metadata, secondary text</td></tr>
+<tr><td><span class="sw" style="background:#6e6e73"></span>--stone</td><td>#6e6e73</td><td>Least-emphasis utility text</td></tr>
+<tr><td><span class="sw" style="background:#9a9898"></span>--ash</td><td>#9a9898</td><td>Disabled text, dark-mockup secondary</td></tr>
+<tr><td><span class="sw" style="background:#007aff"></span>--accent</td><td>#007aff</td><td>In-product info signal (not marketing CTAs)</td></tr>
+<tr><td><span class="sw" style="background:#ff3b30"></span>--danger</td><td>#ff3b30</td><td>Destructive/error state</td></tr>
+<tr><td><span class="sw" style="background:#ff9f0a"></span>--warning</td><td>#ff9f0a</td><td>Caution callouts</td></tr>
+<tr><td><span class="sw" style="background:#30d158"></span>--success</td><td>#30d158</td><td>Positive confirmation</td></tr>
+<tr><td><span class="sw" style="background:#c1401f"></span>--sauce</td><td>#c1401f</td><td>Pasta-motif accent (sparing, not CTA fill)</td></tr>
+<tr><td><span class="sw" style="background:#3f6b34"></span>--basil</td><td>#3f6b34</td><td>Pasta-motif accent</td></tr>
+<tr><td><span class="sw" style="background:#e8b34a"></span>--wheat</td><td>#e8b34a</td><td>Pasta-motif accent</td></tr>
+</table>
+
+<h2>Typography Tokens</h2>
+<table>
+<tr><th>Token</th><th>Size/Weight/Line-height</th><th>Use</th></tr>
+<tr><td>--text-display-xl</td><td>700 38px/1.5</td><td>Hero headline</td></tr>
+<tr><td>--text-heading-md</td><td>700 16px/1.5</td><td>Section label</td></tr>
+<tr><td>--text-body-md</td><td>400 16px/1.5</td><td>Body copy</td></tr>
+<tr><td>--text-body-strong</td><td>500 16px/1.5</td><td>Inline emphasis, nav links</td></tr>
+<tr><td>--text-body-tight</td><td>500 16px/1.0</td><td>Compact label</td></tr>
+<tr><td>--text-link-md</td><td>400 16px/1.5</td><td>Inline anchor link</td></tr>
+<tr><td>--text-button-md</td><td>500 16px/2.0</td><td>Every button label</td></tr>
+<tr><td>--text-caption-md</td><td>400 14px/2.0</td><td>Footer text, badges, captions</td></tr>
+</table>
+<p>Font family: <code>'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace</code> (substitute for unlicensed Berkeley Mono).</p>
+
+<h2>Spacing &amp; Radius Tokens</h2>
+<table>
+<tr><th>Token</th><th>Value</th></tr>
+<tr><td>--space-xxs</td><td>1px</td></tr>
+<tr><td>--space-xs</td><td>4px</td></tr>
+<tr><td>--space-sm</td><td>8px</td></tr>
+<tr><td>--space-md</td><td>12px</td></tr>
+<tr><td>--space-lg</td><td>16px</td></tr>
+<tr><td>--space-xl</td><td>24px</td></tr>
+<tr><td>--space-xxl</td><td>32px</td></tr>
+<tr><td>--space-section</td><td>96px</td></tr>
+<tr><td>--radius-none</td><td>0px — every container/section/card</td></tr>
+<tr><td>--radius-sm</td><td>4px — every interactive element</td></tr>
+<tr><td>--radius-full</td><td>9999px — avatars only</td></tr>
+</table>
+
+<h2>Components (inventory)</h2>
+<ul>
+<li><b>Forms:</b> Button (primary/secondary/ghost), IconButton, Input, Select, Checkbox, Radio, Switch</li>
+<li><b>Feedback:</b> Badge, Tag, Toast, Tooltip</li>
+<li><b>Navigation:</b> Tabs, NavBar</li>
+<li><b>Surfaces:</b> Card, Dialog, ListRow, FocusBadge, TrackerPanel (4-way split: Challenge/Code/Review/Browser — this product's signature mechanic)</li>
+</ul>
+
+<h2>Do's and Don'ts</h2>
+<ul>
+<li>Do render every text role in the mono face. Don't introduce a sans-serif or display face.</li>
+<li>Do keep cream as the only body background. Don't add gray section bands or gradients.</li>
+<li>Do use ASCII bracket markers as bullets/icons. Don't replace them with SVG icons.</li>
+<li>Do reserve the dark surface for one tracking mockup per screen. Don't use it for body content.</li>
+<li>Do reserve semantic colors (accent/danger/warning/success) for in-product state. Don't use them for marketing CTAs.</li>
+<li>Do use 4px radius on interactive elements, 0px everywhere else. Don't add shadows anywhere.</li>
+</ul>
+
+<h2>Raw CSS Tokens</h2>
+<pre>:root{
+--ink:#201d1d;--ink-deep:#0f0000;--canvas:#fdfcfc;--surface-soft:#f8f7f7;
+--surface-card:#f1eeee;--surface-dark:#201d1d;--surface-dark-elevated:#302c2c;
+--hairline:rgba(15,0,0,0.12);--hairline-strong:#646262;--charcoal:#302c2c;
+--body:#424245;--mute:#646262;--stone:#6e6e73;--ash:#9a9898;
+--on-primary:#fdfcfc;--on-dark:#fdfcfc;
+--accent:#007aff;--accent-hover:#0056b3;--accent-active:#004085;
+--danger:#ff3b30;--danger-hover:#d70015;--danger-active:#a50011;
+--warning:#ff9f0a;--warning-hover:#cc7f08;--warning-active:#995f06;
+--success:#30d158;--success-hover:#28ad4a;
+--sauce:#c1401f;--sauce-deep:#8f2a12;--basil:#3f6b34;--wheat:#e8b34a;
+
+--font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
+--text-display-xl:700 38px/1.5 var(--font-mono);
+--text-heading-md:700 16px/1.5 var(--font-mono);
+--text-body-md:400 16px/1.5 var(--font-mono);
+--text-body-strong:500 16px/1.5 var(--font-mono);
+--text-body-tight:500 16px/1 var(--font-mono);
+--text-link-md:400 16px/1.5 var(--font-mono);
+--text-button-md:500 16px/2 var(--font-mono);
+--text-caption-md:400 14px/2 var(--font-mono);
+
+--space-xxs:1px;--space-xs:4px;--space-sm:8px;--space-md:12px;
+--space-lg:16px;--space-xl:24px;--space-xxl:32px;--space-section:96px;
+--radius-none:0px;--radius-sm:4px;--radius-full:9999px;
+}</pre>
+
+</body></html>
